@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+      </style>
+    <link rel='stylesheet' href='./style.css'>
+    <script src='./script.js' defer></script>
+    <title>Library</title>
+</head>
+<body>
+    <!-- <table>
+        <caption>
+            A list of books
+        </caption>
+        <thead>
+            <tr>
+                <th scope='col'>Title</th>
+                <th scope='col'>Author</th>
+                <th scope='col'>Length</th>
+                <th scope='col'>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table> -->
+    <div class='library-header'>
+        <text>Title</text>
+        <text>Author</text>
+        <text>Length</text>
+        <text>Read</text>
+    </div>
+    <div class='library-container'>
+        <div class='book-container' id='0'>
+            <text class='title-text'>a</text>
+            <text class='author-text'>b</text>
+            <text class='length-text'>c</text>
+            <div class='read-button' id='0'></div>
+        </div>
+    </div>
+    <form method='post' action='' class='book-input'>
+        <input type='text' name='title' id='title' required>
+        <label for='title'>Title</label><br>
+
+        <input type='text' name='author' id='author' required>
+        <label for='Author'>Author</label><br>
+
+        <input type='text' name='pages' id='pages' required>
+        <label for='pages'>Page Length</label><br>
+
+        <input type='checkbox' name='status' id='status'>
+        <label for='status'>Have you read the book?</label><br><br>
+
+        <input type='submit' value='submit'>
+    </form>
+    
+</body>
+</html>
