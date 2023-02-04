@@ -1,4 +1,3 @@
-// const tableBody = document.querySelector('tbody');
 const libraryContainer = document.querySelector('.library-container');
 const myLibrary = [];
 const bookInput = document.querySelector('.book-input');
@@ -19,12 +18,9 @@ function removeAllBooks(parent) {
     }
 }
 function generateTable() {
-    // removeAllBooks(tableBody);
     removeAllBooks(libraryContainer);
     let i = 0;
     myLibrary.forEach(entry => {
-        // const newTableRow = document.createElement('tr');
-        // newTableRow.dataset.indexNumber = i;
         const newBook = document.createElement('div');
         newBook.classList.add('book-container');
         newBook.dataset.indexNumber = i;
@@ -46,7 +42,6 @@ function generateTable() {
                 newBook.appendChild(newContent);
             }
         });
-        // tableBody.appendChild(newTableRow);
         libraryContainer.appendChild(newBook);
         i++; 
     });
@@ -55,9 +50,6 @@ function addBook(title, author, pages, status) {
     myLibrary.push(new Book(title, author, pages, status))
     generateTable();
 }
-
-
-
 
 bookInput.addEventListener('submit', (event) => {
     event.preventDefault();
