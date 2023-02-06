@@ -65,7 +65,7 @@ bookInput.addEventListener('submit', (event) => {
 
 
 const modal = document.querySelector('.entry-modal');
-const btn = document.querySelector('.open-button');
+const btn = document.querySelector('.add-button');
 const span = document.getElementsByClassName('close')[0];
 
 btn.onclick = function() {

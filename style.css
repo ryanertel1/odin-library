@@ -25,6 +25,7 @@ html {
     flex-direction: column;
     margin: 0 auto;
     margin-top: 30px;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
@@ -40,17 +41,14 @@ html {
     grid-template-columns: minmax(100px, 10fr) minmax(100px, 7fr) minmax(100px, 3fr) 100px;
 }
 .library-header {
-    margin-top: 30px;
-    width: 90%;
     border-bottom: 2px solid rgb(50,50,50,0.6);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     font-size: 20px;
 }
 .books-container {
-    width: 90%;
-    margin-bottom: 30px;
     font-size: 16px;
+    margin-bottom: 10px;
 }
 .book-info:last-of-type {
     border-bottom-left-radius: 15px;
@@ -79,9 +77,25 @@ border: 2px solid red;
 
 
 
-.open-button {
-    width: 150px;
+.add-button {
     height: 40px;
+    padding-inline: 10px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid var(--lavender);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.add-button:hover {
+    border: 1px solid black;
+    scale: 1.1;
+    transition: 0.5s ease;
+}
+.add-button>svg {
+    height: 90%;
+    width: auto;
+    padding-right: 10px;
 }
 .entry-modal {
     display: none;
@@ -108,8 +122,10 @@ border: 2px solid red;
     animation-duration: 0.4s;
 }
 .close {
-    color: #aaa;
-    float: right;
+    color: #fff;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
     font-size: 28px;
     font-weight: bold;
 }
