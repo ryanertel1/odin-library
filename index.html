@@ -12,19 +12,14 @@
     <title>Library</title>
 </head>
 <body>
-    <div class='library-header'>
-        <text>Title</text>
-        <text>Author</text>
-        <text>Length</text>
-        <text>Read</text>
-    </div>
     <div class='library-container'>
-        <div class='book-container' id='0'>
-            <text class='title-text'>a</text>
-            <text class='author-text'>b</text>
-            <text class='length-text'>c</text>
-            <div class='read-button' id='0'></div>
+        <div class='library-header'>
+            <text>Title</text>
+            <text>Author</text>
+            <text>Length</text>
+            <text>Read</text>
         </div>
+        <div class='books-container'></div>
     </div>
     <form method='post' action='' class='book-input'>
         <input type='text' name='title' id='title' required>
@@ -41,6 +36,14 @@
 
         <input type='submit' value='submit'>
     </form>
+
+    <button class='open-button'></button>
+    <div class='entry-modal'>
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Input form will go here in future</p>
+        </div>
+    </div>
     
 </body>
 </html>

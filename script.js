@@ -1,4 +1,4 @@
-const libraryContainer = document.querySelector('.library-container');
+const booksContainer = document.querySelector('.books-container');
 const myLibrary = [];
 const bookInput = document.querySelector('.book-input');
 
@@ -18,11 +18,11 @@ function removeAllBooks(parent) {
     }
 }
 function generateTable() {
-    removeAllBooks(libraryContainer);
+    removeAllBooks(booksContainer);
     let i = 0;
     myLibrary.forEach(entry => {
         const newBook = document.createElement('div');
-        newBook.classList.add('book-container');
+        newBook.classList.add('book-info');
         newBook.dataset.indexNumber = i;
 
         Object.values(entry).forEach(val => {
@@ -33,7 +33,6 @@ function generateTable() {
             } else {
                 const newContent = document.createElement('div');
                 newContent.classList.add('read-button');
-                console.log(val);
                 if (val === true) {
                     newContent.classList.add('read-on');
                 } else {
@@ -42,7 +41,7 @@ function generateTable() {
                 newBook.appendChild(newContent);
             }
         });
-        libraryContainer.appendChild(newBook);
+        booksContainer.appendChild(newBook);
         i++; 
     });
 }
@@ -60,3 +59,23 @@ bookInput.addEventListener('submit', (event) => {
     addBook(inputTitle, inputAuthor, inputPages, inputStatus)
     bookInput.reset();
 });
+
+
+
+
+
+const modal = document.querySelector('.entry-modal');
+const btn = document.querySelector('.open-button');
+const span = document.getElementsByClassName('close')[0];
+
+btn.onclick = function() {
+    modal.style.display = 'block';
+}
+span.onclick = function() {
+    modal.style.display = 'none';
+}
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
