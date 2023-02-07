@@ -143,27 +143,27 @@ padding:1px;
     font-style: italic;
     font-size: 14px;
     letter-spacing: 0.2em;
+    display: flex;
 }
 #title {
     grid-row: 1 / 2;
-    width: 400px;
+    width: clamp(50px, 40vw, 400px);
 }
 #author {
     grid-row: 2 / 3;
-    width: 250px;
+    width: clamp(150px, 30vw, 250px);
 }
 #pages {
     grid-row: 3 / 4;
-    width: 100px;
+    width: clamp(75px,10vw,100px);
 }
 .book-input>#status {
     grid-row: 4 / 5;
+    width: clamp(20px,5vw,30px);
 }
 .close {
     color: #fff;
     position: absolute;
-    bottom: 30px;
-    right: 30px;
     font-size: 28px;
     font-weight: bold;
 }
@@ -172,6 +172,10 @@ padding:1px;
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+.closeEntry {
+    right: 50px;
+    bottom: 0px;
 }
 .book-modal {
     display: none;
