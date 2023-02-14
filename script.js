@@ -10,15 +10,6 @@ const entryModalClose = document.getElementsByClassName('closeEntry')[0];
 const bookModal = document.querySelector('.book-modal')
 const bookModalClose = document.getElementsByClassName('closeBook')[0];
 
-// function Book(title, author, pages, status) {
-//     this.title = title;
-//     this.author = author;
-//     this.pages = pages;
-//     this.status = status;
-// }
-// Book.prototype.info = function() {
-//     return(`${this.title} by ${this.author}, ${this.pages}, ${this.status}`);
-// }
 class Book {
     constructor(title, author, pages, status) {
         this.title = title;
