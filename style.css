@@ -208,3 +208,16 @@ padding:1px;
     from {opacity: 0}
     to {opacity: 1}
 }
+
+.form-error {
+    position: absolute;
+    bottom: 225px;
+    height: min-content;
+    left: 50%;
+    min-width: max-content;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    color: red;
+    font-size: 1.8rem;
+}

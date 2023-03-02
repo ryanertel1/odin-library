@@ -23,9 +23,13 @@
         <button class='add-button'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus-box-outline</title><path d="M19,19V5H5V19H19M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5C3,3.89 3.9,3 5,3H19M11,7H13V11H17V13H13V17H11V13H7V11H11V7Z" /></svg>Add Book</button>
     </div>
     <div class='entry-modal'>
+        <span class='form-error'>
+            <text>Error: pages should be a number</text>
+            <text>Error: all fields are required</text>
+        </span>
         <div class="entry-modal-content">
             <span class='close closeEntry'>&times;</span>
-            <form method='post' action='' class='book-input'>
+            <form method='post' action='' class='book-input' novalidate>
                 <div class='input-container'>
                     <input type='text' name='title' id='title' required>
                     <label for='title' id='title'>Title</label><br>
@@ -35,7 +39,7 @@
                     <label for='Author' id='author'>Author</label><br>
                 </div>
                     <div class='input-container'>
-                    <input type='text' name='pages' id='pages' required>
+                    <input type='number' name='pages' id='pages' required>
                     <label for='pages' id='pages'>Pages</label><br>
                 </div>
                 <div class='input-container'>                    

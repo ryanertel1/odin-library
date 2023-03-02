@@ -9,6 +9,7 @@ const entryModalClose = document.getElementsByClassName('closeEntry')[0];
 // Dom objects for book information modal
 const bookModal = document.querySelector('.book-modal')
 const bookModalClose = document.getElementsByClassName('closeBook')[0];
+const formError = document.querySelector('.form-error');
 
 class Book {
     constructor(title, author, pages, status) {
@@ -56,19 +57,47 @@ function addBook(title, author, pages, status) {
     myLibrary.push(new Book(title, author, pages, status))
     generateTable();
 }
+function clearErrors() {
+    while (formError.firstChild) {
+        formError.removeChild(formError.lastChild);
+    }
+}
 
 bookInput.addEventListener('submit', (event) => {
     event.preventDefault();
-    const inputTitle = document.getElementById('title').value;
-    const inputAuthor = document.getElementById('author').value;
-    const inputPages = document.getElementById('pages').value;
-    const inputStatus = document.getElementById('status').checked;
-    addBook(inputTitle, inputAuthor, inputPages, inputStatus)
-    bookInput.reset();
-    entryModal.style.display = 'none';
+    clearErrors();
+    const inputTitle = document.getElementById('title');
+    const inputAuthor = document.getElementById('author');
+    const inputPages = document.getElementById('pages');
+    const inputStatus = document.getElementById('status');
+    let errorState = false;
+    if (inputTitle.validity.valueMissing) {
+        const titleError = document.createElement('text');
+        titleError.innerHTML = 'Title is a required field';
+        formError.appendChild(titleError);
+        errorState = true;
+    }
+    if (inputAuthor.validity.valueMissing) {
+        const authorError = document.createElement('text');
+        authorError.innerHTML = 'Author is a required field';
+        formError.appendChild(authorError);
+        errorState = true;
+    }
+    if (inputPages.validity.valueMissing) {
+        const pagesError = document.createElement('text');
+        pagesError.innerHTML = 'Pages is a required field';
+        formError.appendChild(pagesError);
+        errorState = true;
+    }
+    if (!errorState) {
+        addBook(inputTitle.value, inputAuthor.value, inputPages.value, inputStatus.checked)
+        bookInput.reset();
+        entryModal.style.display = 'none';
+    }
 });
 
 addBtn.onclick = function() {
+    clearErrors();
     entryModal.style.display = 'block';
 }
 entryModalClose.onclick = function() {
